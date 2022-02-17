@@ -4,8 +4,8 @@
 
 import sys
 
-def get_smallest_prime_factor(n):
-    """
+#def get_smallest_prime_factor(n):
+"""
     Returns the smallest integer that is a factor of `n`.
     
     If `n` is a prime number `None` is returned.
@@ -27,11 +27,20 @@ def get_smallest_prime_factor(n):
     2
     >>> get_smallest_prime_factor(9)
     3
-    """
-    for i in range(2, n):
-        if (n % i) == 0:
+"""
+ #   for i in range(2, n):
+  #      if (n % i) == 0:
+   #         return i
+    #return None
+def get_smallest_prime_factor(n):
+    """Returns the smallest prime number that is a divisor of x"""
+    # Start checking with 2, then move up one by one
+    i = 2
+    while i*i <= n:
+        if n % i == 0:
             return i
-    return None
+        i += 1
+    return n
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
