@@ -28,6 +28,10 @@ def get_smallest_prime_factor(n):
     >>> get_smallest_prime_factor(9)
     3
     """
+    for i in range(2, n):
+        if (n % i) == 0:
+            return i
+    return None
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
